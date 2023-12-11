@@ -20,3 +20,47 @@ char *_Str_duplicate(const char *str)
 		ptr[i] = str[i];
 	return (ptr);
 }
+
+int _str_compare(char *str1, char *str2)
+{
+	int cmp;
+
+	cmp = (int)*str1 - (int)*str2;
+	while(*str1)
+	{
+		if (*str1 != *str2)
+			break;
+		str1++;
+		str2++;
+		cmp = (int)*str1 - (int)*str2;
+	}
+	return (cmp);
+}
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+	return (len);
+}
+
+int _strcat(char *dest, char *src)
+{
+        char *p = dest;
+
+        while (*p)
+                p++;
+
+        while (*src)
+        {
+                *p = *src;
+                p++;
+                src++;
+        }
+        *p = *src;
+        return (dest);
+}
+
+
