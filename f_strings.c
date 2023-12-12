@@ -46,7 +46,7 @@ int _strlen(char *s)
 	return (len);
 }
 
-int _strcat(char *dest, char *src)
+char * _strcat(char *dest, char *src)
 {
         char *p = dest;
 
@@ -63,4 +63,7 @@ int _strcat(char *dest, char *src)
         return (dest);
 }
 
-
+char *_strcpy(char *dest, char *src)
+{
+	.....
+}
