@@ -13,12 +13,11 @@ int main(int ac, char **av)
 	char *line = NULL, **command = NULL;
 	int status = 0;
 	(void) ac;
-	(void) av;
 
 	while(1)
 	{
 		line = read_from_user();
-		if (line == NULL) // end of file or ctrl + D
+		if (line == NULL) /* end of file or ctrl + D */
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n" , 1);
@@ -29,15 +28,6 @@ int main(int ac, char **av)
 		if (command == NULL)
 			continue;
 
-		for (i = 0; command[i]; i++)
-		{
-			printf("%s\n", command[i]);
-			// we are not allow to use printf i will update it later
-			free(command[i]);
-			command[i] = NULL;
-		}
-		free(command), command = NULL;
-
-
+		status = _execute(command, av);
 	}
 }

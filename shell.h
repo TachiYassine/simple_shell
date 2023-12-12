@@ -13,8 +13,13 @@
 #include <errno.h>
 #include <fcntl.h>
 
+extern char **environ;
+
 char *read_from_user(void);
 char **tokenizer(char *line);
+int _execute(char **command, char **argv);
+void freearray2D(char **arr);
+
 
 char *_Str_duplicate(const char *str);
 int _str_compare(char *str1, char *str2);

@@ -11,7 +11,7 @@ char **tokenizer(char *line)
 {
 	char *token = NULL;
 	char *tmp_line = NULL;
-	char *command = NULL;
+	char **command = NULL;
 	int cpt_str = 0, i = 0;
 
 	if (line == NULL)
