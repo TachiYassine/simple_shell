@@ -1,33 +1,37 @@
 #include "shell.h"
 
 /**
- * main - simple shell main function that run all other functions
- * @ac: count of arguments
- * @av: arguments
- * 
- * Return: 0 Always (success).
+ * main - Entry point for a my simple shell program.
+ *
+ * @ac: Number of arguments passed to the program.
+ * @av: Array of pointers to strings containing the arguments.
+ *
+ * Return: Exit status of the program.
  */
-
 int main(int ac, char **av)
 {
 	char *line = NULL, **command = NULL;
-	int status = 0;
+	int status = 0, idx = 0;
 	(void) ac;
 
-	while(1)
+	while (1)
 	{
 		line = read_from_user();
 		if (line == NULL) /* end of file or ctrl + D */
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n" , 1);
+				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+		idx++;
 
 		command = tokenizer(line);
 		if (command == NULL)
 			continue;
 
-		status = _execute(command, av);
+		if (is_builtin(command[0]))
+			handle_builtin(command, av, &status, idx);
+		else
+			status = _execute(command, av, idx);
 	}
 }

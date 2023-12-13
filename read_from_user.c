@@ -1,12 +1,11 @@
 #include "shell.h"
 
-/*
- * read_from_user - .......update this description later
- * @line: ......
+/**
+ * read_from_user - Reads a string input from the user.
  *
- * Return string
+ * Return: Pointer to the string read from the user.
+ *         NULL if an error occurs or if the input is empty.
  */
-
 char *read_from_user(void)
 {
 	char *line = NULL;

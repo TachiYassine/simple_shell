@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * _Str_duplicate - Duplicates a string.
+ *
+ * @str: Pointer to the string to be duplicated.
+ *
+ * Return: Pointer to a new allocated memory containing copy of string.
+ *         NULL if memory allocation fails or if str is NULL.
+ */
 char *_Str_duplicate(const char *str)
 {
 	char *ptr;
@@ -21,12 +29,21 @@ char *_Str_duplicate(const char *str)
 	return (ptr);
 }
 
+/**
+ * _str_compare - Compares two strings lexicographically.
+ *
+ * @str1: Pointer to the first string for comparison.
+ * @str2: Pointer to the second string for comparison.
+ *
+ * Return: An integer < than, = to, or > than zero if str1 is found
+ * so to be less than, to match, or be greater than str2
+ */
 int _str_compare(char *str1, char *str2)
 {
 	int cmp;
 
 	cmp = (int)*str1 - (int)*str2;
-	while(*str1)
+	while (*str1)
 	{
 		if (*str1 != *str2)
 			break;
@@ -37,6 +54,13 @@ int _str_compare(char *str1, char *str2)
 	return (cmp);
 }
 
+/**
+ * _strlen - Computes the length of a string.
+ *
+ * @s: Pointer to the string whose length is to be determined.
+ *
+ * Return: Length of string (number characters) excluding the null terminator
+ */
 int _strlen(char *s)
 {
 	int len = 0;
@@ -46,24 +70,48 @@ int _strlen(char *s)
 	return (len);
 }
 
-char * _strcat(char *dest, char *src)
+/**
+ * _strcat - Concatenates two strings, appending the second to the first.
+ *
+ * @dest: Pointer to the destination string where the concatenation will occur.
+ * @src: Pointer to the string to be appended.
+ *
+ * Return: Pointer to the destination string.
+ */
+char *_strcat(char *dest, char *src)
 {
-        char *p = dest;
+	char *p = dest;
 
-        while (*p)
-                p++;
+	while (*p)
+		p++;
 
-        while (*src)
-        {
-                *p = *src;
-                p++;
-                src++;
-        }
-        *p = *src;
-        return (dest);
+	while (*src)
+	{
+		*p = *src;
+		p++;
+		src++;
+	}
+	*p = *src;
+	return (dest);
 }
-/*
+
+/**
+ * _strcpy - Copies a string including the null terminator.
+ *
+ * @dest: Pointer to the destination buffer where the string will be copied.
+ * @src: Pointer to the string to be copied.
+ *
+ * Return: Pointer to the destination buffer.
+ */
 char *_strcpy(char *dest, char *src)
 {
-	.....
-}*/
+	int i = 0;
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
