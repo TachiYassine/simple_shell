@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * read_from_user - Reads a string input from the user.
+ * read_line - Reads a string input from the user.
  *
  * Return: Pointer to the string read from the user.
  *         NULL if an error occurs or if the input is empty.

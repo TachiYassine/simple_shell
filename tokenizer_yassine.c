@@ -26,7 +26,7 @@ char **tokenizer(char *line)
 	while (token)
 	{
 		cpt++;
-		token = strtok(NULL,DELIM);
+		token = strtok(NULL, DELIM);
 	}
 	free(tmp), tmp = NULL;
 
@@ -38,12 +38,12 @@ char **tokenizer(char *line)
 	}
 
 	token = strtok(line, DELIM);
-        while (token)
-        {
-                command[i] = _strdup(token);
-                token = strtok(NULL,DELIM);
+	while (token)
+	{
+		command[i] = _strdup(token);
+		token = strtok(NULL, DELIM);
 		i++;
-        }
+	}
 	free(line), line = NULL;
 	command[i] = NULL;
 	return (command);

@@ -4,7 +4,6 @@
  * _execute - execute command from user
  * @command: from user
  * @argv: arguments
- * @idx: count of line in prompt
  *
  * Return: 0 in success
  */

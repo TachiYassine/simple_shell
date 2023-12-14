@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _Str_duplicate - Duplicates a string.
+ * _strdup - Duplicates a string.
  *
  * @str: Pointer to the string to be duplicated.
  *
@@ -15,7 +15,7 @@ char *_strdup(const char *str)
 
 	if (str == NULL)
 		return (NULL);
-	
+
 	while (*str != '\0')
 	{
 		len++;
@@ -31,10 +31,10 @@ char *_strdup(const char *str)
 }
 
 /**
- * _str_compare - Compares two strings lexicographically.
+ * _strcmp - Compares two strings lexicographically.
  *
- * @str1: Pointer to the first string for comparison.
- * @str2: Pointer to the second string for comparison.
+ * @s1: Pointer to the first string for comparison.
+ * @s2: Pointer to the second string for comparison.
  *
  * Return: An integer < than, = to, or > than zero if str1 is found
  * so to be less than, to match, or be greater than str2

@@ -4,7 +4,7 @@
  * main - Entry point for a my simple shell program.
  *
  * @ac: Number of arguments passed to the program.
- * @av: Array of pointers to strings containing the arguments.
+ * @argv: Array of pointers to strings containing the arguments.
  *
  * Return: Exit status of the program.
  */
@@ -29,7 +29,7 @@ int main(int ac, char **argv)
 		command = tokenizer(line);
 		if (!command)
 			continue;
-		
+
 		status = _execute(command, argv);
 	}
 }
