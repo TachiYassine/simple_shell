@@ -6,7 +6,7 @@
  * Return: Pointer to the string read from the user.
  *         NULL if an error occurs or if the input is empty.
  */
-char *read_from_user(void)
+char *read_line(void)
 {
 	char *line = NULL;
 	size_t len = 0;
@@ -14,7 +14,6 @@ char *read_from_user(void)
 
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
-
 	n = getline(&line, &len, stdin);
 	if (n == -1)
 	{

@@ -8,7 +8,7 @@
  * Return: Pointer to a new allocated memory containing copy of string.
  *         NULL if memory allocation fails or if str is NULL.
  */
-char *_Str_duplicate(const char *str)
+char *_strdup(const char *str)
 {
 	char *ptr;
 	int i, len = 0;
@@ -16,9 +16,12 @@ char *_Str_duplicate(const char *str)
 	if (str == NULL)
 		return (NULL);
 	
-	while (str[len])
+	while (*str != '\0')
+	{
 		len++;
-
+		str++;
+	}
+	str = str - len;
 	ptr = malloc(sizeof(char) * (len * 1));
 	if (ptr == NULL)
 		return (NULL);
@@ -36,18 +39,18 @@ char *_Str_duplicate(const char *str)
  * Return: An integer < than, = to, or > than zero if str1 is found
  * so to be less than, to match, or be greater than str2
  */
-int _str_compare(char *str1, char *str2)
+int _strcmp(char *s1, char *s2)
 {
 	int cmp;
 
-	cmp = (int)*str1 - (int)*str2;
-	while (*str1)
+	cmp = (int)*s1 - (int)*s2;
+	while (*s1)
 	{
-		if (*str1 != *str2)
+		if (*s1 != *s2)
 			break;
-		str1++;
-		str2++;
-		cmp = (int)*str1 - (int)*str2;
+		s1++;
+		s2++;
+		cmp = (int)*s1 - (int)*s2;
 	}
 	return (cmp);
 }
@@ -65,6 +68,7 @@ int _strlen(char *s)
 
 	while (s[len])
 		len++;
+
 	return (len);
 }
 
@@ -89,7 +93,8 @@ char *_strcat(char *dest, char *src)
 		p++;
 		src++;
 	}
-	*p = '\0';
+	*p = *src;
+
 	return (dest);
 }
 

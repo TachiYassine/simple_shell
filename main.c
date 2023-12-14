@@ -10,28 +10,26 @@
  */
 int main(int ac, char **argv)
 {
-	char *line = NULL, **command = NULL;
-	int status = 0, idx = 0;
+	int status = 0;
+	char *line = NULL;
+	char **command = NULL;
 	(void) ac;
 
 	while (1)
 	{
-		line = read_from_user();
-		if (line == NULL) /* end of file or ctrl + D */
+		line = read_line();
+		if (line == NULL) /* rech end of file */
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
-		idx++;
+
 
 		command = tokenizer(line);
-		if (command == NULL)
+		if (!command)
 			continue;
-
-		if (is_builtin(command[0]))
-			handle_builtin(command, argv, &status, idx);
-		else
-			status = _execute(command, argv, idx);
+		
+		status = _execute(command, argv);
 	}
 }

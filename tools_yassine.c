@@ -33,7 +33,8 @@ void freearray2D(char **arr)
  * This function prints an error message indicating an issue or failure,
  * including relevant details such as the name, command, and index.
  */
-void print_error(char *name, char *cmd, int idx)
+
+/*void print_error(char *name, char *cmd, int idx)
 {
 	char *index, msg[] = ": not found\n";
 
@@ -47,7 +48,7 @@ void print_error(char *name, char *cmd, int idx)
 	write(STDERR_FILENO, msg, _strlen(msg));
 
 	free(index);
-}
+}*/
 
 /**
  * _itoa - Converts an integer to a string.
@@ -56,7 +57,7 @@ void print_error(char *name, char *cmd, int idx)
  *
  * Return: Pointer to a string representing the integer value.
  */
-char *_itoa(int n)
+/*char *_itoa(int n)
 {
 	char buffer[20];
 	int i = 0;
@@ -76,7 +77,7 @@ char *_itoa(int n)
 	reverse_string(buffer, i);
 
 	return (_Str_duplicate(buffer));
-}
+}*/
 
 /**
  * reverse_string - Reverses characters in a string up to a specified length.
@@ -86,7 +87,7 @@ char *_itoa(int n)
  *
  * This function reverses characters in the string to the specified length
  */
-void reverse_string(char *str, int len)
+/*void reverse_string(char *str, int len)
 {
 	char tmp;
 	int start = 0;
@@ -100,4 +101,4 @@ void reverse_string(char *str, int len)
 		start++;
 		end--;
 	}
-}
+}*/

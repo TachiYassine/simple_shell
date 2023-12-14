@@ -1,5 +1,4 @@
-File 1 : README.md
-***************************************************************************
+
 # Custom Shell - Team Yassine & Imad
 
 This is a custom shell created by Team Yassine & Imad as part of a project.
@@ -23,5 +22,3 @@ This shell is a custom implementation that allows users to execute commands, bot
 
 - C compiler (e.g., GCC)
 - Unix-based operating system (Linux, macOS)
-***************************************************************************
-
