@@ -8,7 +8,7 @@
  *
  * Return: Exit status of the program.
  */
-int main(int ac, char **av)
+int main(int ac, char **argv)
 {
 	char *line = NULL, **command = NULL;
 	int status = 0, idx = 0;
@@ -30,8 +30,8 @@ int main(int ac, char **av)
 			continue;
 
 		if (is_builtin(command[0]))
-			handle_builtin(command, av, &status, idx);
+			handle_builtin(command, argv, &status, idx);
 		else
-			status = _execute(command, av, idx);
+			status = _execute(command, argv, idx);
 	}
 }

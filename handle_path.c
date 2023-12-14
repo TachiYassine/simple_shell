@@ -15,9 +15,12 @@ char *_getpath(char *command)
 
 	for (i = 0; command[i]; i++)
 	{
-		if (stat(command, &st) == 0) /* if path exist */
-			return (_Str_duplicate(command));
-		return (NULL);
+		if(command[i] == '/')
+		{
+			if (stat(command, &st) == 0) /* if path exist */
+				return (_Str_duplicate(command));
+			return (NULL);
+		}
 	}
 	path_env = _getenv("PATH");
 	if (!path_env)

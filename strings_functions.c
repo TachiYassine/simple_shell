@@ -15,12 +15,10 @@ char *_Str_duplicate(const char *str)
 
 	if (str == NULL)
 		return (NULL);
-	while (*str != '\0')
-	{
+	
+	while (str[len])
 		len++;
-		str++;
-	}
-	str = str - len;
+
 	ptr = malloc(sizeof(char) * (len * 1));
 	if (ptr == NULL)
 		return (NULL);
@@ -91,7 +89,7 @@ char *_strcat(char *dest, char *src)
 		p++;
 		src++;
 	}
-	*p = *src;
+	*p = '\0';
 	return (dest);
 }
 
