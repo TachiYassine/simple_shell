@@ -73,7 +73,7 @@ char *_itoa(int n)
 	}
 
 	buffer[i] = '\0';
-	reverse_string(_Str_duplicate(buffer), i);
+	reverse_string(buffer, i);
 
 	return (_Str_duplicate(buffer));
 }
