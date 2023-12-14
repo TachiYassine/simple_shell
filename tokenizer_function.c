@@ -10,7 +10,7 @@ char **tokenizer(char *line)
 	char *token = NULL, *tmp_line = NULL, **command = NULL;
 	int cpt_str = 0, i = 0;
 
-	if (line == NULL)
+	if (!line)
 		return (NULL);
 	tmp_line = _Str_duplicate(line), token = strtok(tmp_line, DELIMITER);
 	if (token == NULL)
@@ -24,7 +24,7 @@ char **tokenizer(char *line)
 	}
 	free(tmp_line), tmp_line = NULL;
 	command = malloc(sizeof(char *) * (cpt_str + 1));
-	if (command == NULL)
+	if (!command)
 	{
 		free(line), line = NULL;
 		return (NULL);
