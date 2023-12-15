@@ -16,7 +16,7 @@ void prompt(char **av, char **env)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "#cisfun$ ", 9);
+			write(STDOUT_FILENO, "$ ", 2);
 		num_char = getline(&string, &n, stdin);
 		if (num_char == -1)
 		{
