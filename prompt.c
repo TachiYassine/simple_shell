@@ -8,7 +8,7 @@
 void prompt(char **av, char **env)
 {
 	char *string = NULL, *argv[] = {NULL, NULL}; /* char **argv */
-	int status, i = 0;
+	int i, status;
 	size_t n = 0;
 	ssize_t num_char;
 	pid_t child_pid;
@@ -22,10 +22,12 @@ void prompt(char **av, char **env)
 		{
 			free(string), exit(EXIT_FAILURE);
 		}
+		i = 0;
 		while (string[i])
 		{
 			if (string[i] == '\n')
-				string[i] = 0, i++;
+				string[i] = 0;
+			i++;
 		}
 		argv[0] = string;
 		child_pid = fork();
