@@ -2,16 +2,12 @@
 
 /**
  * prompt - Function to display a prompt and execute commands
+ *
  * @av: Array of pointers to strings containing program arguments
  * @env: Array of pointers to strings containing environment variables
  *
- * Description:
- * This function displays a prompt (if STDIN is a terminal) and continuously
- * reads input from user. then executes the entered command using execve.
- * If the command does not exist, it prints an error message indicating so.
- * The function runs in an infinite loop until terminated externally.
+ * Return: Exit status of the program.
  */
-
 void prompt(char **av, char **env)
 {
 	char *string = NULL;

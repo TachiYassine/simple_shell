@@ -2,9 +2,11 @@
 
 /**
  * main - Entry point of the program
+ *
  * @ac: Number of arguments passed to the program
  * @av: Array of pointers to strings containing the arguments
  * @env: Array of pointers to strings containing the environment variables
+ *
  * Return: 0.
  */
 
